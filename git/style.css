@@ -1,0 +1,75 @@
+/* Reset de bază */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Stil pentru body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin-top: 60px; /* Așezăm conținutul mai jos pentru a face loc navbarului fixat */
+}
+
+/* Navbar fixat */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 999;
+}
+
+.topnav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.topnav a:hover {
+  background-color: #575757;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+}
+
+/* Secțiune de conținut */
+.content {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+}
+
+/* Secțiuni de conținut */
+.features, .about {
+  margin-top: 30px;
+}
+
+.features ul {
+  list-style-type: none;
+  font-size: 18px;
+}
+
+.features li {
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

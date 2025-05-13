@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Logout</title>
+  <link rel="stylesheet" href="logat.css">  
+  <link rel="stylesheet" href="../navbar/navbar.css">
+  <link rel="stylesheet" href="../footer.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="topnav">
+    <a href="../index.html">Home</a>
+    <a href="../login/login.html">Login</a>
+    <a href="../regist/regist.html">Sign In</a>
+    <a class="active" href="logat.html">Logout</a>
+  </div>
+
+  <!-- Logout message -->
+  <div class="logout-box">
+    <h2>Ai fost delogat cu succes.</h2>
+    <p><a href="../login/login.html">Înapoi la login</a></p>
+  </div>
+
+  <!-- Script: ștergere localStorage -->
+  <script>
+    localStorage.removeItem("email");
+    localStorage.removeItem("parola");
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Site-ul nostru. Toate drepturile rezervate.</p>
+      <div class="social-links">
+        <a href="#" class="social-icon">Facebook</a>
+        <a href="#" class="social-icon">Twitter</a>
+        <a href="#" class="social-icon">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
