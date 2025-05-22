@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Inteligență Emoțională</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="anxietate.css">
+</head>
+<body>
+  <!-- Floating Navigation -->
+<nav class="floating-nav">
+  <a href="../index.html" title="Acasă">&#8962;</a>
+  <a href="anxietate.html" title="Test Anxietate">&#128200;</a>
+  <a href="intel.html" title="Inteligență Emoțională">&#128161;</a>
+  <a href="person.html" title="Test Personalitate">&#128218;</a>
+
+</nav>
+  <nav>
+    <div class="topnav">
+      <a href="../index.html">Home</a>
+      <a href="anxietate.html">Test Anxietate</a>
+      <a class="active" href="intel.html">Inteligență Emoțională</a>
+      <a class="active" href="person.html">Test Personalitate</a>
+      <a href="../logat/logat.html">Logout</a>
+    </div>
+  </nav>
+<!-- Adaugă în header sau după <body> -->
+<button id="theme-toggle" style="position:fixed;top:20px;right:20px;z-index:999;">Mod întunecat</button>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  // Salvează preferința în localStorage
+  if(localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    btn.textContent = 'Mod luminos';
+  }
+  btn.onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? 'Mod luminos' : 'Mod întunecat';
+    localStorage.setItem('darkMode', isDark);
+  };
+</script>
+  <div class="test-container">
+    <!-- Mesajul de introducere -->
+    <p style="text-align:center; font-size: 18px; color: #00695c;"><h1>Test de Anxientate <br></h1>
+    <p>Răspunde sincer la fiecare întrebare. La final, vei primi un scor și o interpretare.</p></p>
+
+    <form id="intelForm">
+      <input type="hidden" id="totalScore" value="0" />
+
+      <!-- Întrebările -->
+      <div class="question question-container active" id="q1">
+        <label>1. Simți frecvent că nu poți controla îngrijorările tale?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(1)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q2">
+        <label>2. Îți este greu să te relaxezi în situații de stres?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(2)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q3">
+        <label>3. Te simți adesea neliniștit(ă) fără un motiv evident?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(3)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q4">
+        <label>4. Te simți uneori copleșit(ă) de gânduri negative?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(4)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q5">
+        <label>5. Îți este dificil să adormi din cauza îngrijorărilor?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(5)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q6">
+        <label>6. Simți că te îngrijorezi exagerat pentru situații care nu sunt atât de grave?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(6)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q7">
+        <label>7. Te temi că vei avea un atac de panică fără un motiv clar?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(7)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q8">
+        <label>8. Simți adesea tensiune în corp din cauza stresului?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(8)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q9">
+        <label>9. Îți este greu să te concentrezi din cauza gândurilor tale anxioase?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="button" onclick="nextQuestion(9)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q10">
+        <label>10. Te simți adesea obosit(ă) din cauza îngrijorărilor constante?</label>
+        <select required>
+          <option value="">Alege...</option>
+          <option value="0">Niciodată</option>
+          <option value="1">Rar</option>
+          <option value="2">Uneori</option>
+          <option value="3">Des</option>
+          <option value="4">Întotdeauna</option>
+        </select>
+        <button type="submit">Vezi rezultatul</button>
+      </div>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function nextQuestion(n) {
+      const current = document.getElementById(`q${n}`);
+      const select = current.querySelector('select');
+      const val = select.value;
+
+      if (val === "") {
+        alert("Te rugăm să alegi un răspuns.");
+        return;
+      }
+
+      let total = parseInt(document.getElementById("totalScore").value);
+      total += parseInt(val);
+      document.getElementById("totalScore").value = total;
+
+      current.style.display = "none";
+      const next = document.getElementById(`q${n + 1}`);
+      if (next) next.style.display = "block";
+    }
+
+    document.getElementById("intelForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const lastVal = document.getElementById("q10").querySelector("select").value;
+      if (lastVal === "") {
+        alert("Te rugăm să alegi un răspuns la ultima întrebare.");
+        return;
+      }
+
+      let total = parseInt(document.getElementById("totalScore").value);
+      total += parseInt(lastVal);
+
+      let interpretare = "";
+      if (total <= 13) {
+        interpretare = "Nivel scăzut de anxietate.";
+      } else if (total <= 26) {
+        interpretare = "Nivel mediu. Poți lucra în continuare la conștientizare și control emoțional.";
+      } else {
+        interpretare = "Nivel ridicat. Ești foarte conștient(ă) de emoții și știi să le gestionezi.";
+      }
+
+      document.getElementById("result").innerHTML = `<h2>Scorul tău: ${total} / 40</h2><p>${interpretare}</p>`;
+      document.getElementById("q10").style.display = "none";
+    });
+
+    // Afișăm doar prima întrebare la început
+    window.onload = () => {
+      for (let i = 2; i <= 10; i++) {
+        document.getElementById(`q${i}`).style.display = "none";
+      }
+    };
+
+  if (!localStorage.getItem("email") || !localStorage.getItem("parola")) {
+  alert("Trebuie să fii logat pentru a accesa acest test.");
+  window.location.href = "../login/login.html"; // redirecționează la login
+}
+const email = localStorage.getItem("email");
+  const parola = localStorage.getItem("parola");
+  </script>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Site-ul nostru. Toate drepturile rezervate.</p>
+     
+    </div>
+  </footer>
+</body>
+</html>

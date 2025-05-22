@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Principală</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="test/anxietate.css">
+</head>
+<body>
+<style>
+body {
+  background-image: url('https://st2.depositphotos.com/1004077/10088/v/600/depositphotos_100886348-stock-illustration-abstract-background-with-head-and.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+}
+
+    </style>
+<!-- Floating Navigation -->
+<nav class="floating-nav">
+  <a href="index.html" title="Acasă">&#8962;</a>
+  <a href="login/login.html" title="Login">&#128274;</a>
+  <a href="regist/regist.html" title="Sign In">&#128100;</a>
+  <a href="test/anxietate.html" title="Test Anxietate">&#128200;</a>
+  <a href="test/intel.html" title="Inteligență Emoțională">&#128161;</a>
+  <a href="test/person.html" title="Test Personalitate">&#128218;</a>
+  <a href="logat/logat.html" title="Logout">&#128682;</a>
+</nav>
+  <!-- Navbar -->
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+   <a href="test/anxietate.html">Test Anxietate</a>
+    <a href="test/intel.html">Inteligență Emoțională</a>
+    <a class="active" href="test/person.html">Test Personalitate</a>
+    <link rel="stylesheet" href="../test/anxietate.css">
+    <a id="loginBtn" href="login/login.html">Login</a>
+    <a id="registerBtn" href="regist/regist.html">Register</a>
+    <button id="logoutBtn" style="display:none;">Logout</button>
+
+  </div>
+<!-- Adaugă în header sau după <body> -->
+<button id="theme-toggle" style="position:fixed;top:20px;right:20px;z-index:999;">Mod întunecat</button>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  // Salvează preferința în localStorage
+  if(localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    btn.textContent = 'Mod luminos';
+  }
+  btn.onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? 'Mod luminos' : 'Mod întunecat';
+    localStorage.setItem('darkMode', isDark);
+  };
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (isLoggedIn) {
+      loginBtn.style.display = "none";
+      registerBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+    } else {
+      loginBtn.style.display = "inline-block";
+      registerBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+    }
+
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("loggedIn");
+      location.reload(); // sau redirect spre index.html
+    });
+  });
+</script>
+  <!-- Main content -->
+  <div class="content"><br><br><br><br>
+    <h1>Bine ai venit pe Psihology-Test !</h1>
+    <p>Acesta este un site de test psihologic care te va ajuta să te înțelegi mai bine și să gestionezi stresul și emoțiile.</p>
+    
+    <section class="features"><br><br><br><br><br><br><br>
+      <h2>Ce oferim?</h2>
+      <ul>
+        <li>Posibilitatea de autocunoaștere mai profunda. </li>
+        <li>Acces la rezultatele tale.</li>
+      </ul>
+    </section>
+    
+    <section class="about"><br><br><br><br><br><br><br>
+      <h2>Despre noi</h2>
+      <p>Suntem un site dedicat dezvoltării personale. </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+   <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Site-ul nostru. Toate drepturile rezervate.</p>
+
+  </div>
+</footer>
+</body>
+</html>

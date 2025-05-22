@@ -1,0 +1,222 @@
+/* Reset & general styling */
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #71b8ac, #acb6e5);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation */
+    .topnav {
+      background-color: #004d40;
+      overflow: hidden;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .topnav a:hover {
+      background-color: #004d40;
+    }
+
+    .topnav a.active {
+      background-color: #004d40;
+    }
+
+    /* Conținutul principal: centrare cu flex (mai sus) */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Poziționează cutia în partea de sus */
+      padding-top: 30px;  /* spațiu suplimentar de sus */
+    }
+
+    /* Login Box */
+    .login-box {
+      background: white;
+      padding: 40px;
+      margin: 20px auto; /* reduce spațiul de sus */
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 16px #004d40(0, 0, 0, 0.2);
+    }
+
+    .login-header header {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-field:focus {
+      border-color: #4CAF50;
+    }
+
+    .forgot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    /* Submit Button */
+    .input-submit {
+      text-align: center;
+      position: relative;
+    }
+
+    .submit-btn {
+      background-color: #004d40;
+      border: none;
+      padding: 12px 40px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #004d40;
+    }
+
+    .input-submit label {
+      display: none;
+    }
+
+    /* Sign-up link */
+    .sign-up-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .sign-up-link a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .sign-up-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004d40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin-bottom: 10px;
+    }
+
+    .social-links .social-icon {
+      color: #ddd;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .social-links .social-icon:hover {
+      color: white;
+    }
+    /* ...existing code... */
+
+/* === DARK MODE === */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #232526, #414345) !important;
+  color: #f1f1f1 !important;
+}
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: rgba(0,77,64,0.85);
+  padding: 14px 8px;
+  border-radius: 16px;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.floating-nav a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  text-align: center;
+}
+.floating-nav a:hover, .floating-nav a.active {
+  background: #00695c;
+}
+body.dark-mode .header,
+body.dark-mode .test-container {
+  background-color: #333a3a !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .topnav {
+  background-color: #222 !important;
+}
+
+body.dark-mode .topnav a {
+  color: #fff !important;
+}
+
+body.dark-mode .footer {
+  background-color: #222 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .result {
+  background-color: #232526 !important;
+  color: #b2dfdb !important;
+}
+
+body.dark-mode .question label {
+  color: #b2dfdb !important;
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Inteligență Emoțională</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="person.css">
+</head>
+<body>
+  <!-- Floating Navigation -->
+<nav class="floating-nav">
+  <a href="../index.html" title="Acasă">&#8962;</a>
+  <a href="anxietate.html" title="Test Anxietate">&#128200;</a>
+  <a href="intel.html" title="Inteligență Emoțională">&#128161;</a>
+  <a href="person.html" title="Test Personalitate">&#128218;</a>
+</nav>
+  <nav>
+    <div class="topnav">
+      <a href="../index.html">Home</a>
+      <a href="anxietate.html">Test Anxietate</a>
+      <a class="active" href="intel.html">Inteligență Emoțională</a>
+      <a class="active" href="person.html">Test Personalitate</a>
+      <a href="../logat/logat.html">Logout</a>
+    </div>
+  </nav>
+<!-- Adaugă în header sau după <body> -->
+<button id="theme-toggle" style="position:fixed;top:20px;right:20px;z-index:999;">Mod întunecat</button>
+<script>
+    if (!localStorage.getItem("email") || !localStorage.getItem("parola")) {
+    window.location.href = "../login/login.html";
+  }
+
+  const btn = document.getElementById('theme-toggle');
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    btn.textContent = 'Mod luminos';
+  }
+  btn.onclick = function () {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? 'Mod luminos' : 'Mod întunecat';
+    localStorage.setItem('darkMode', isDark);
+  };
+  const btn = document.getElementById('theme-toggle');
+  // Salvează preferința în localStorage
+  if(localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    btn.textContent = 'Mod luminos';
+  }
+  btn.onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? 'Mod luminos' : 'Mod întunecat';
+    localStorage.setItem('darkMode', isDark);
+  };
+
+  if (!localStorage.getItem("email") || !localStorage.getItem("parola")) {
+  alert("Trebuie să fii logat pentru a accesa acest test.");
+  window.location.href = "../login/login.html"; // redirecționează la login
+}
+</script>
+  <div class="test-container">
+    <!-- Mesajul de introducere -->
+    <p style="text-align:center; font-size: 18px; color: #00695c;"><h1>Test de Personalitate <br></h1>
+    <p>Răspunde sincer la fiecare întrebare. La final, vei primi un scor și o interpretare.</p></p>
+
+    <form id="intelForm">
+      <input type="hidden" id="totalScore" value="0" />
+
+      <!-- Întrebările -->
+      <div class="question question-container active" id="q1">
+        <label>1.  Cum preferi să îți petreci timpul liber?</label>
+        <select required>
+         <option value="">Alege...</option>
+        <option value="extrovert">Cu prietenii, în oraș</option>
+        <option value="introvert">Citind sau reflectând</option>
+        <option value="analitic">Rezolvând puzzle-uri sau jocuri logice</option>
+        <option value="empatic">Ascultând și sprijinind prieteni</option>
+        </select>
+        <button type="button" onclick="nextQuestion(1)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q2">
+        <label>2. Cum reacționezi într-un conflict?</label>
+        <select required>
+          <option value="">Alege...</option>
+        <option value="extrovert">Spun direct ce gândesc</option>
+        <option value="introvert">Evit confruntările</option>
+        <option value="analitic">Caut logic soluția optimă</option>
+        <option value="empatic">Încerc să înțeleg ce simte cealaltă persoană</option>
+        </select>
+        <button type="button" onclick="nextQuestion(2)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q3">
+        <label>3. Cum îți începi de obicei ziua?</label>
+        <select required>
+           <option value="">Alege...</option>
+    <option value="extrovert">Cu muzică energică sau un apel către un prieten</option>
+    <option value="introvert">Cu un moment de liniște sau meditație</option>
+    <option value="analitic">Planificând tot ce am de făcut</option>
+    <option value="empatic">Gândindu-mă la cum pot ajuta pe cineva azi</option>
+        </select>
+        <button type="button" onclick="nextQuestion(3)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q4">
+        <label>4. Cum reacționezi într-un grup nou de oameni?</label>
+        <select required>
+            <option value="">Alege...</option>
+    <option value="extrovert">Mă simt confortabil și vorbesc deschis</option>
+    <option value="introvert">Observ și ascult mai mult la început</option>
+    <option value="analitic">Încerc să înțeleg dinamica grupului</option>
+    <option value="empatic">Caut persoane care par stânjenite și le implic</option>
+        </select>
+        <button type="button" onclick="nextQuestion(4)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q5">
+        <label>5.  Ce tip de activitate preferi la locul de muncă sau în proiecte?</label>
+        <select required>
+          <option value="">Alege...</option>
+    <option value="extrovert">Lucru în echipă și brainstorming</option>
+    <option value="introvert">Lucru individual și autonomie</option>
+    <option value="analitic">Analiză de date sau rezolvarea problemelor complexe</option>
+    <option value="empatic">Activități care implică sprijinul colegilor</option>
+        </select>
+        <button type="button" onclick="nextQuestion(5)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q6">
+        <label>6. Cum îți exprimi sentimentele?</label>
+        <select required>
+         <option value="">Alege...</option>
+    <option value="extrovert">Deschis și fără rețineri</option>
+    <option value="introvert">Prefer să le procesez în interior</option>
+    <option value="analitic">Încerc să le înțeleg rațional înainte să le exprim</option>
+    <option value="empatic">Le exprim cu grijă față de ceilalți</option>
+        </select>
+        <button type="button" onclick="nextQuestion(6)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q7">
+        <label>7.Cum iei deciziile importante?</label>
+        <select required>
+           <option value="">Alege...</option>
+    <option value="extrovert">Întreb prieteni sau colegi pentru feedback</option>
+    <option value="introvert">Reflectez singur(ă) în liniște</option>
+    <option value="analitic">Analizez toate opțiunile logic</option>
+    <option value="empatic">Mă gândesc cum va afecta pe ceilalți</option>
+        </select>
+        <button type="button" onclick="nextQuestion(7)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q8">
+        <label>8. Cum reacționezi la schimbări bruște?</label>
+        <select required>
+         <option value="">Alege...</option>
+    <option value="extrovert">Le îmbrățișez cu entuziasm</option>
+    <option value="introvert">Am nevoie de timp pentru adaptare</option>
+    <option value="analitic">Încerc să înțeleg cauza și să găsesc soluții</option>
+    <option value="empatic">Mă concentrez pe cum afectează ceilalți</option>
+        </select>
+        <button type="button" onclick="nextQuestion(8)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q9">
+        <label>9.Ce fel de filme sau cărți preferi?</label>
+        <select required>
+           <option value="">Alege...</option>
+    <option value="extrovert">Aventură, comedie, acțiune</option>
+    <option value="introvert">Dramă, introspecție, poezie</option>
+    <option value="analitic">Mister, SF, documentare</option>
+    <option value="empatic">Emoționale, inspiraționale, biografii</option>
+        </select>
+        <button type="button" onclick="nextQuestion(9)">Următoarea</button>
+      </div>
+
+      <div class="question question-container" id="q10">
+        <label>10. Ce apreciezi cel mai mult la tine?</label>
+        <select required>
+         <option value="">Alege...</option>
+        <option value="extrovert">Energia și sociabilitatea</option>
+        <option value="introvert">Calmul și introspecția</option>
+        <option value="analitic">Gândirea clară și logică</option>
+        <option value="empatic">Bunătatea și înțelegerea</option>
+        </select>
+        <button type="submit">Vezi rezultatul</button>
+      </div>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function nextQuestion(n) {
+      const current = document.getElementById(`q${n}`);
+      const select = current.querySelector('select');
+      const val = select.value;
+
+      if (val === "") {
+        alert("Te rugăm să alegi un răspuns.");
+        return;
+      }
+
+      let total = parseInt(document.getElementById("totalScore").value);
+      total += parseInt(val);
+      document.getElementById("totalScore").value = total;
+
+      current.style.display = "none";
+      const next = document.getElementById(`q${n + 1}`);
+      if (next) next.style.display = "block";
+    }
+
+    document.getElementById("intelForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const lastVal = document.getElementById("q10").querySelector("select").value;
+      if (lastVal === "") {
+        alert("Te rugăm să alegi un răspuns la ultima întrebare.");
+        return;
+      }
+
+      let total = parseInt(document.getElementById("totalScore").value);
+      total += parseInt(lastVal);
+
+      let interpretare = "";
+      if (total <= 13) {
+        interpretare = "Nivel scăzut de inteligență emoțională.";
+      } else if (total <= 26) {
+        interpretare = "Nivel mediu. Poți lucra în continuare la conștientizare și control emoțional.";
+      } else {
+        interpretare = "Nivel ridicat. Ești foarte conștient(ă) de emoții și știi să le gestionezi.";
+      }
+
+      document.getElementById("result").innerHTML = `<h2>Scorul tău: ${total} / 40</h2><p>${interpretare}</p>`;
+      document.getElementById("q10").style.display = "none";
+    });
+
+    // Afișăm doar prima întrebare la început
+    window.onload = () => {
+      for (let i = 2; i <= 10; i++) {
+        document.getElementById(`q${i}`).style.display = "none";
+      }
+    };
+
+  if (!localStorage.getItem("email") || !localStorage.getItem("parola")) {
+  alert("Trebuie să fii logat pentru a accesa acest test.");
+  window.location.href = "../login/login.html"; // redirecționează la login
+}
+  </script>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Site-ul nostru. Toate drepturile rezervate.</p>
+     
+    </div>
+  </footer>
+</body>
+</html>

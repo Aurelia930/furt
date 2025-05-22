@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Logout</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./logat.css">
+  <link rel="stylesheet" href="../test/anxietate.css">
+  <style>
+    /* Stiluri generale pentru pagina */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #1a8363;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Navbar stilizat */
+    .topnav {
+      background-color: #004d40;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .topnav a:hover {
+      background-color: #004d40;
+    }
+
+    .topnav .active {
+      background-color: #004d40;
+    }
+
+    /* Caseta de logout */
+    .logout-box {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 40px;
+      margin: 40px auto;
+      width: 50%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .logout-box p {
+      font-size: 18px;
+    }
+
+    .logout-box a {
+      text-decoration: none;
+      color: #004d40;
+      font-weight: bold;
+    }
+
+    .logout-box a:hover {
+      color: #004d40;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      color: #54d19d;
+    }
+
+    /* Responsivitate pentru dispozitive mobile */
+    @media screen and (max-width: 768px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .logout-box {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<body>
+
+  <!-- Floating Navigation -->
+  <nav class="floating-nav">
+    <a href="../index.html" title="Acasă">&#8962;</a>
+    <a href="../login/login.html" title="Login">&#128274;</a>
+    <a href="../regist/regist.html" title="Sign In">&#128100;</a>
+    <a href="../test/anxietate.html" title="Test Anxietate">&#128200;</a>
+    <a href="../test/intel.html" title="Inteligență Emoțională">&#128161;</a>
+    <a href="../test/person.html" title="Test Personalitate">&#128218;</a>
+    <a href="../logat/logat.html" title="Logout">&#128682;</a>
+  </nav><body>
+
+ 
+  <!-- Navbar -->
+  <div class="topnav">
+    <a class="active" href="../index.html">Home</a>
+    <a href="../test/anxietate.html">Test Anxietate</a>
+    <a href="../test/intel.html">Inteligență Emoțională</a>
+   <a class="active" href="../test/person.html">Test Personalitate</a>
+  </div>
+<!-- Adaugă în header sau după <body> -->
+<button id="theme-toggle" style="position:fixed;top:20px;right:20px;z-index:999;">Mod întunecat</button>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  // Salvează preferința în localStorage
+  if(localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    btn.textContent = 'Mod luminos';
+  }
+  btn.onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? 'Mod luminos' : 'Mod întunecat';
+    localStorage.setItem('darkMode', isDark);
+  };
+</script>
+  <!-- Logout message -->
+  <div class="logout-box">
+    <h2>Ai fost delogat cu succes.</h2>
+    <p><a href="../login/login.html">Înapoi la login</a></p>
+  </div>
+
+  <!-- Script: ștergere localStorage -->
+  <script>
+    localStorage.removeItem("email");
+    localStorage.removeItem("parola");
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Site-ul nostru. Toate drepturile rezervate.</p>
+  
+    </div>
+  </footer>
+
+</body>
+</html>

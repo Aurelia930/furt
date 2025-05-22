@@ -1,0 +1,99 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #71b8ac;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.logout-box {
+  margin-top: 150px;
+  background-color: #71b8ac;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.logout-box h2 {
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.logout-box a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logout-box a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: auto;
+}
+/* ...existing code... */
+
+/* === DARK MODE === */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #232526, #414345) !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .header,
+body.dark-mode .test-container {
+  background-color: #333a3a !important;
+  color: #f1f1f1 !important;
+}
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: rgba(0,77,64,0.85);
+  padding: 14px 8px;
+  border-radius: 16px;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.floating-nav a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  text-align: center;
+}
+.floating-nav a:hover, .floating-nav a.active {
+  background: #00695c;
+}
+body.dark-mode .topnav {
+  background-color: #222 !important;
+}
+
+body.dark-mode .topnav a {
+  color: #fff !important;
+}
+
+body.dark-mode .footer {
+  background-color: #222 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .result {
+  background-color: #232526 !important;
+  color: #b2dfdb !important;
+}
+
+body.dark-mode .question label {
+  color: #b2dfdb !important;
+}

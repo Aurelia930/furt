@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #71b8ac, #acb6e5);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px; /* Aduce conținutul mai sus */
+}
+
+/* Login Box */
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  margin-top: 0; /* opțional – păstrează sus */
+}
+
+.login-header h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0d1618;
+}
+
+/* Input Fields */
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.input-field:focus {
+  border-color: #0a1518;
+  outline: none;
+}
+
+/* Forgot section */
+.forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #020708;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #4CAF50;
+}
+
+/* Sign up link */
+.sign-up-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.sign-up-link a {
+  color: #00695c(0,77,64,0.85);
+  text-decoration: none;
+}
+
+.sign-up-link a:hover {
+  text-decoration: underline;
+}
+/* ...existing code... */
+
+/* === DARK MODE === */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #232526, #414345) !important;
+  color: #f1f1f1 !important;
+}
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: rgba(0,77,64,0.85);
+  padding: 14px 8px;
+  border-radius: 16px;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.floating-nav a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  text-align: center;
+}
+.floating-nav a:hover, .floating-nav a.active {
+  background: #00695c;
+}
+body.dark-mode .header,
+body.dark-mode .test-container {
+  background-color: #333a3a !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .topnav {
+  background-color: #077056 !important;
+}
+
+body.dark-mode .topnav a {
+  color: #fff !important;
+}
+
+body.dark-mode .footer {
+  background-color: #222 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .result {
+  background-color: #222 !important;
+  color: #b2dfdb !important;
+}
+
+body.dark-mode .question label {
+  color: #b2dfdb !important;
+}

@@ -1,0 +1,92 @@
+<html>
+  <body>   
+<head>
+  <meta charset="UTF-8">
+  <title>Logout</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./login.css">
+  <link rel="stylesheet" href="../test/anxietate.css">
+</head>      
+<html>
+  <body>
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+      <a href="../index.html" title="Acasă">&#8962;</a>
+      <a href="../test/anxietate.html" title="Test Anxietate">&#128200;</a>
+      <a href="../test/intel.html" title="Inteligență Emoțională">&#128161;</a>
+      <a href="../test/person.html" title="Test Personalitate">&#128218;</a>
+    </nav>
+  <nav>
+  <div class="topnav">
+    <a class="active" href="../index.html">Home</a>
+        <a href="../test/anxietate.html">Test Anxietate</a>
+    <a href="../test/intel.html">Inteligență Emoțională</a>
+        <a class="active" href="../test/person.html">Test Personalitate</a>
+  </nav>
+  <!-- Adaugă în header sau după <body> -->
+<button id="theme-toggle" style="position:fixed;top:20px;right:20px;z-index:999;">Mod întunecat</button>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  // Salvează preferința în localStorage
+  if(localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    btn.textContent = 'Mod luminos';
+  }
+  btn.onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    btn.textContent = isDark ? 'Mod luminos' : 'Mod întunecat';
+    localStorage.setItem('darkMode', isDark);
+  };
+</script>
+  <div class="login-box">
+  <div class="login-header">
+    <header>Login</header>
+  </div>
+  
+  <div class="input-box">
+    <input type="text" id="email" class="input-field" placeholder="Email" autocomplete="off" required>
+  </div>
+  
+  <div class="input-box">
+    <input type="password" id="parola" class="input-field" placeholder="Parola" autocomplete="off" required>
+  </div>
+  
+  <div class="forgot">
+    <section>
+      <input type="checkbox" id="check">
+      <label for="check">Ține-mă minte</label>
+    </section>
+    <section>
+      <a href="#">Forgot password</a>
+    </section>
+  </div>
+  
+  <div class="input-submit">
+    <button class="submit-btn" id="submit">Sign In</button>
+  </div>
+  
+  <div class="sign-up-link">
+    <p>Nu aveți cont? <a href="../regist/regist.html">Înregistrează-te</a></p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const parola = document.getElementById("parola").value;
+
+    const storedEmail = localStorage.getItem("email");
+    const storedParola = localStorage.getItem("parola");
+
+    if (!storedEmail || !storedParola || email !== storedEmail || parola !== storedParola) {
+      alert("Autentificare eșuată! Email sau parolă incorecte.");
+    } else {
+      alert("Autentificare reușită!");
+      localStorage.setItem("loggedIn", "true"); // setare stare autentificat
+      window.location.href = "../index.html";   // redirecționare
+    }
+  });
+</script>
